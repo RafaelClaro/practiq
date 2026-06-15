@@ -547,7 +547,15 @@ footer {
   display: flex; align-items: center; justify-content: center;
   box-shadow: 0 4px 24px rgba(37,211,102,.3);
   text-decoration: none;
-  transition: transform .2s, box-shadow .2s;
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity .4s ease, transform .4s ease, box-shadow .2s;
+}
+.wa-float.wa-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 .wa-float:hover { transform: scale(1.08); box-shadow: 0 6px 32px rgba(37,211,102,.45); }
 

@@ -19,7 +19,13 @@ export default function ClientEffects() {
   useEffect(() => {
     // Nav scroll
     const nav = document.getElementById("navbar");
-    const onScroll = () => nav?.classList.toggle("scrolled", window.scrollY > 40);
+    const waBtn = document.querySelector<HTMLElement>(".wa-float");
+    const onScroll = () => {
+      nav?.classList.toggle("scrolled", window.scrollY > 40);
+      // Mostra o botão WhatsApp quando o usuário chega perto do fim da página
+      const nearBottom = window.scrollY + window.innerHeight >= document.body.scrollHeight - 120;
+      waBtn?.classList.toggle("wa-visible", nearBottom);
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
 
     // Scroll reveal
