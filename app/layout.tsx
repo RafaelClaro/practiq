@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ChatBubble from "@/components/ChatBubble";
 
 export const metadata: Metadata = {
   title: "Practiq · Rafael Claro — Automação para negócios",
@@ -22,7 +23,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <ChatBubble />
+      </body>
     </html>
   );
 }
