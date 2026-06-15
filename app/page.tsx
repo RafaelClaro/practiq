@@ -23,13 +23,13 @@ export default function Home() {
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
           </svg>
-          Falar agora
+          Começar agora
         </a>
       </nav>
 
       {/* HERO */}
       <div id="hero">
-        <p className="eyebrow">Automação inteligente · Practiq · Rafael Claro</p>
+        <p className="eyebrow">Automação inteligente</p>
         <h1>Menos processo manual.<br /><em>Mais tempo para o que importa.</em></h1>
         <p className="hero-sub">
           Automatizo WhatsApp, agendamento e atendimento para pequenas empresas e profissionais que não têm tempo a perder com tarefas repetitivas.
@@ -40,12 +40,6 @@ export default function Home() {
               <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
             </svg>
             Quero automatizar meu negócio
-          </a>
-          <a href="#servicos" className="btn-ghost">
-            Ver serviços
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
           </a>
         </div>
 
@@ -86,10 +80,10 @@ export default function Home() {
         {/* DOR */}
         <div id="dor" style={{ borderTop: "1px solid var(--border)" }}>
           <div className="section-wrap" style={{ border: "none", paddingTop: 100, paddingBottom: 100 }}>
-            <p className="eyebrow">O problema</p>
-            <h2>Processo manual trava<br/>qualquer negócio.</h2>
-            <p className="sec-sub">Não importa o setor. Quem depende de processo manual perde tempo, comete erros e deixa de crescer.</p>
-            <div className="dor-grid reveal">
+            <p className="eyebrow reveal-left">O problema</p>
+            <h2 className="reveal" data-delay="120">Processo manual trava<br/>qualquer negócio.</h2>
+            <p className="sec-sub reveal" data-delay="220">Não importa o setor. Quem depende de processo manual perde tempo, comete erros e deixa de crescer.</p>
+            <div className="dor-grid" data-stagger>
               <div className="dor-card">
                 <div className="dor-icon">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -127,10 +121,10 @@ export default function Home() {
         {/* SOLUÇÃO */}
         <div id="solucao" style={{ borderTop: "1px solid var(--border)" }}>
           <div className="section-wrap" style={{ border: "none", paddingTop: 100, paddingBottom: 100 }}>
-            <p className="eyebrow">A solução</p>
-            <h2>Automação construída<br/>pra rodar sem você.</h2>
-            <p className="sec-sub">Desenvolvo o sistema uma vez. Ele trabalha todos os dias — sem erro, sem esquecimento, sem custo de hora extra.</p>
-            <div className="steps-grid reveal">
+            <p className="eyebrow reveal-left">A solução</p>
+            <h2 className="reveal" data-delay="120">Automação construída<br/>pra rodar sem você.</h2>
+            <p className="sec-sub reveal" data-delay="220">Desenvolvo o sistema uma vez. Ele trabalha todos os dias — sem erro, sem esquecimento, sem custo de hora extra.</p>
+            <div className="steps-grid" data-stagger>
               <div className="step-card">
                 <div className="step-icon">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -165,10 +159,10 @@ export default function Home() {
         {/* SERVIÇOS */}
         <div id="servicos" style={{ borderTop: "1px solid var(--border)" }}>
           <div className="section-wrap" style={{ border: "none", paddingTop: 100, paddingBottom: 100 }}>
-            <p className="eyebrow">Serviços</p>
-            <h2>O que posso<br/>automatizar pra você.</h2>
-            <p className="sec-sub">Cada entrega é desenvolvida sob medida. Não é template, não é plataforma de terceiro.</p>
-            <div className="services-grid reveal">
+            <p className="eyebrow reveal-left">Serviços</p>
+            <h2 className="reveal" data-delay="120">O que posso<br/>automatizar pra você.</h2>
+            <p className="sec-sub reveal" data-delay="220">Cada entrega é desenvolvida sob medida. Não é template, não é plataforma de terceiro.</p>
+            <div className="services-grid" data-stagger>
 
               <div className="svc-card featured">
                 <span className="svc-badge">Mais contratado</span>
@@ -282,25 +276,25 @@ export default function Home() {
         {/* PROVA */}
         <div id="prova" style={{ borderTop: "1px solid var(--border)" }}>
           <div className="section-wrap" style={{ border: "none", paddingTop: 100, paddingBottom: 100 }}>
-            <p className="eyebrow">Resultados</p>
-            <h2>O que muda quando<br/>o processo roda sozinho.</h2>
-            <p className="sec-sub">Exemplos reais do que a automação resolve no dia a dia de diferentes negócios.</p>
+            <p className="eyebrow reveal-left">Resultados</p>
+            <h2 className="reveal" data-delay="120">O que muda quando<br/>o processo roda sozinho.</h2>
+            <p className="sec-sub reveal" data-delay="220">Exemplos reais do que a automação resolve no dia a dia de diferentes negócios.</p>
 
-            <div className="stats-row reveal">
+            <div className="stats-row" data-stagger>
               {[
-                { num: "−70%", label: "de faltas com confirmação automática" },
-                { num: "3h",   label: "economizadas por dia na operação" },
-                { num: "24h",  label: "o agente atende sem parar" },
-                { num: "7d",   label: "até a automação estar no ar" },
+                { num: "−70%", count: 70, prefix: "−", suffix: "%", label: "de faltas com confirmação automática" },
+                { num: "3h",   count: 3,  prefix: "",  suffix: "h",  label: "economizadas por dia na operação" },
+                { num: "24h",  count: 24, prefix: "",  suffix: "h",  label: "o agente atende sem parar" },
+                { num: "7d",   count: 7,  prefix: "",  suffix: "d",  label: "até a automação estar no ar" },
               ].map((s) => (
                 <div key={s.num} className="stat-box">
-                  <div className="stat-num">{s.num}</div>
+                  <div className="stat-num" data-count={s.count} data-prefix={s.prefix} data-suffix={s.suffix}>{s.num}</div>
                   <div className="stat-label">{s.label}</div>
                 </div>
               ))}
             </div>
 
-            <div className="cases-grid reveal">
+            <div className="cases-grid" data-stagger>
               {[
                 {
                   icon: <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>,
@@ -350,10 +344,10 @@ export default function Home() {
         {/* COMO CONTRATAR */}
         <div id="como" style={{ borderTop: "1px solid var(--border)" }}>
           <div className="section-wrap" style={{ border: "none", paddingTop: 100, paddingBottom: 100 }}>
-            <p className="eyebrow">Como contratar</p>
-            <h2>Simples, direto,<br/>sem burocracia.</h2>
-            <p className="sec-sub">Três etapas para o seu negócio rodar no automático.</p>
-            <div className="process-row reveal">
+            <p className="eyebrow reveal-left">Como contratar</p>
+            <h2 className="reveal" data-delay="120">Simples, direto,<br/>sem burocracia.</h2>
+            <p className="sec-sub reveal" data-delay="220">Três etapas para o seu negócio rodar no automático.</p>
+            <div className="process-row" data-stagger>
               {[
                 { n: "01", title: "Conversa rápida", desc: "Me conta o maior problema do seu processo hoje. 30 minutos pelo WhatsApp ou videochamada. Sem formulário, sem reunião longa.", time: "→ Hoje mesmo" },
                 { n: "02", title: "Proposta sob medida", desc: "Envio uma proposta clara com escopo, prazo e valor. Sem surpresa no meio do projeto. Você decide com calma.", time: "→ Em até 24h" },
@@ -373,7 +367,7 @@ export default function Home() {
 
       {/* CTA FINAL */}
       <div id="contato" style={{ borderTop: "1px solid var(--border)", padding: "120px 48px", textAlign: "center" }}>
-        <div className="cta-inner reveal">
+        <div className="cta-inner reveal-scale">
           <p className="eyebrow" style={{ justifyContent: "center" }}>Vamos conversar?</p>
           <h2>Seu negócio pode parar de operar no manual.</h2>
           <p>Sem formulário longo. Sem proposta genérica. Uma conversa direta sobre o que você precisa — e o que faz sentido construir.</p>
@@ -382,7 +376,7 @@ export default function Home() {
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
               </svg>
-              Falar com Rafael agora
+              Quero automatizar meu negócio
             </a>
             <span className="cta-note">Resposta em até 2h em horário comercial</span>
           </div>
@@ -391,7 +385,7 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer>
-        <div className="footer-brand">Practiq<span>.</span> · Rafael Claro</div>
+        <div className="footer-brand">Practiq<span>.</span></div>
         <div className="footer-copy">Automação que funciona no seu dia a dia · São Paulo, BR</div>
       </footer>
 
