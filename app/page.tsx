@@ -22,16 +22,13 @@ export default function Home() {
           <li><a href="#como">Como funciona</a></li>
         </ul>
         <a href={WA} className="nav-cta" target="_blank" rel="noopener">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-          </svg>
           Começar agora
         </a>
       </nav>
 
       {/* HERO */}
       <div id="hero">
-        <p className="eyebrow">Tecnologia prática para negócios reais</p>
+        <span className="hero-badge"><span className="hero-badge-pulse"></span>Tecnologia prática para negócios reais</span>
         <h1>Presença digital e automação<br/>pra seu negócio rodar <em>melhor</em>.</h1>
         <p className="hero-sub">
           Construo o site que ainda falta e automatizo o que trava seu processo. Tudo sob medida, sem enrolação.
@@ -76,7 +73,11 @@ export default function Home() {
             <div className="dores-grid">
               <div className="dores-col">
                 <div className="dores-col-head">
-                  <span className="ic">🤖</span>
+                  <div className="ic">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/>
+                    </svg>
+                  </div>
                   <h3>Quem já tem negócio rodando</h3>
                 </div>
                 <div className="dor-item">
@@ -98,7 +99,11 @@ export default function Home() {
 
               <div className="dores-col">
                 <div className="dores-col-head">
-                  <span className="ic">🌐</span>
+                  <div className="ic">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
+                  </div>
                   <h3>Quem ainda não tem presença digital</h3>
                 </div>
                 <div className="dor-item">
@@ -133,11 +138,6 @@ export default function Home() {
               <div className="services-grid" data-stagger>
                 <div className="svc-card featured">
                   <span className="svc-badge">Mais contratado</span>
-                  <div className="svc-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/>
-                    </svg>
-                  </div>
                   <div className="svc-name">Agente de atendimento no WhatsApp</div>
                   <div className="svc-desc">Responde dúvidas, agenda compromissos, confirma horários e encaminha casos complexos — 24h por dia, sem recepcionista.</div>
                   <div className="svc-tags">
@@ -147,11 +147,6 @@ export default function Home() {
                 </div>
 
                 <div className="svc-card">
-                  <div className="svc-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>
-                    </svg>
-                  </div>
                   <div className="svc-name">Confirmação e lembrete automático</div>
                   <div className="svc-desc">Mensagem automática antes do compromisso com link de confirmação ou reagendamento. Elimina faltas sem esforço da equipe.</div>
                   <div className="svc-tags">
@@ -161,11 +156,6 @@ export default function Home() {
                 </div>
 
                 <div className="svc-card">
-                  <div className="svc-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
-                    </svg>
-                  </div>
                   <div className="svc-name">Régua de relacionamento pós-atendimento</div>
                   <div className="svc-desc">Follow-up automático após cada atendimento: pesquisa de satisfação, lembrete de retorno e reativação de clientes inativos.</div>
                   <div className="svc-tags">
@@ -181,11 +171,6 @@ export default function Home() {
               <div className="services-grid" data-stagger>
                 <div className="svc-card">
                   <span className="svc-badge">Mais pedido</span>
-                  <div className="svc-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                    </svg>
-                  </div>
                   <div className="svc-name">Site institucional profissional</div>
                   <div className="svc-desc">Página rápida, mobile-first, com identidade visual própria. Passa credibilidade e converte visitante em cliente.</div>
                   <div className="svc-tags">
@@ -195,11 +180,6 @@ export default function Home() {
                 </div>
 
                 <div className="svc-card">
-                  <div className="svc-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                      <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
-                    </svg>
-                  </div>
                   <div className="svc-name">Landing page de conversão</div>
                   <div className="svc-desc">Página única focada em vender um produto, serviço ou captar leads. Estrutura pensada pra transformar visita em contato.</div>
                   <div className="svc-tags">
@@ -209,11 +189,6 @@ export default function Home() {
                 </div>
 
                 <div className="svc-card">
-                  <div className="svc-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/>
-                    </svg>
-                  </div>
                   <div className="svc-name">Portal ou sistema sob medida</div>
                   <div className="svc-desc">Área de login, painel administrativo, integração com banco de dados. Para quem precisa de mais que uma página estática.</div>
                   <div className="svc-tags">
@@ -224,11 +199,6 @@ export default function Home() {
 
                 <div className="svc-card combo">
                   <span className="svc-badge combo-badge">Mais completo</span>
-                  <div className="svc-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
-                    </svg>
-                  </div>
                   <div className="svc-name">Site + Automação integrados</div>
                   <div className="svc-desc">Seu site com agendamento e atendimento via WhatsApp já conectados desde o lançamento. Tudo entregue e mantido por mim.</div>
                   <div className="svc-tags">
@@ -352,7 +322,7 @@ export default function Home() {
       {/* FOOTER */}
       <footer>
         <div className="footer-brand">Practiq<span>.</span></div>
-        <div className="footer-copy">Automação que funciona no seu dia a dia · São Paulo, BR</div>
+        <div className="footer-copy">Tecnologia prática para negócios reais</div>
       </footer>
 
     </>
