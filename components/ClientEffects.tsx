@@ -5,11 +5,10 @@ import { useEffect } from "react";
 const WA_URL =
   "https://wa.me/5511976287171?text=Olá%2C%20Rafael%21%20Vi%20o%20site%20da%20Practiq%20e%20quero%20saber%20mais%20sobre%20automação%20para%20minha%20empresa.";
 
-const TL_IDS    = ["dor", "solucao", "servicos", "prova", "como"];
-const TL_LABELS = ["O problema", "A solução", "Serviços", "Resultados", "Como contratar"];
+const TL_IDS    = ["dor", "servicos", "prova", "como"];
+const TL_LABELS = ["O problema", "Serviços", "Resultados", "Como contratar"];
 const TL_ICONS  = [
   '<svg viewBox="0 0 24 24"><path d="M10.24 3.957l-8.422 14.06a1.989 1.989 0 0 0 1.7 2.983h16.845a1.989 1.989 0 0 0 1.7-2.983l-8.423-14.06a1.989 1.989 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>',
-  '<svg viewBox="0 0 24 24"><path d="M3 12h1m8-9v1m8 8h1m-15.4-6.4l.7.7m12.1-.7l-.7.7"/><path d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0-1 3a2 2 0 0 1-4 0a3.5 3.5 0 0 0-1-3"/><path d="M9.7 17h4.6"/></svg>',
   '<svg viewBox="0 0 24 24"><path d="M3.5 5.5l1.5 1.5l2.5-2.5m-4 6l1.5 1.5l2.5-2.5m-4 6l1.5 1.5l2.5-2.5"/><path d="M11 6h9m-9 6h9m-9 6h9"/></svg>',
   '<svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10M17 4v8a5 5 0 0 1-10 0V4"/><path d="M5 9H3M19 9h2"/></svg>',
   '<svg viewBox="0 0 24 24"><path d="M5 12l5 5l10-10"/></svg>',
