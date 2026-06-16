@@ -33,11 +33,6 @@ export default function Home() {
         <p className="hero-sub">
           Construo o site que ainda falta e automatizo o que trava seu processo. Tudo sob medida, sem enrolação.
         </p>
-        <div className="hero-actions">
-          <a href={WA} className="btn-primary" target="_blank" rel="noopener">
-            Quero conversar →
-          </a>
-        </div>
 
         <div className="pilares-grid reveal" data-stagger>
           <a href="#automacao" className="pilar-card">
