@@ -634,4 +634,9 @@ footer {
 
   .pilares-grid { grid-template-columns: 1fr; margin-top: 40px; }
   .dores-grid   { grid-template-columns: 1fr; gap: 14px; }
+
+  .hero-badge { font-size: 9px; letter-spacing: 1px; padding: 7px 14px; white-space: nowrap; gap: 7px; }
+
+  .cta-buttons .btn-primary,
+  .cta-buttons .btn-outline { padding: 12px 22px; font-size: 14px; }
 }

@@ -308,10 +308,16 @@ export default function Home() {
           <div className="cta-actions">
             <div className="cta-buttons">
               <a href={WA} className="btn-primary" target="_blank" rel="noopener">
-                🤖 Quero automatizar meu negócio
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/>
+                </svg>
+                Quero automatizar meu negócio
               </a>
               <a href={WA_SITE} className="btn-outline" target="_blank" rel="noopener">
-                🌐 Quero um site profissional
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+                Quero um site profissional
               </a>
             </div>
             <span className="cta-note">Resposta em até 2h em horário comercial</span>
