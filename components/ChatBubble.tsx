@@ -9,11 +9,20 @@ export default function ChatBubble() {
   const [hovered, setHovered] = useState(false);
   const [timerLabel, setTimerLabel] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  const interacted = useRef(false);
 
   useEffect(() => {
-    const t = setTimeout(() => setTimerLabel(true), 3000);
+    const t = setTimeout(() => {
+      if (!interacted.current) setTimerLabel(true);
+    }, 3000);
     return () => clearTimeout(t);
   }, []);
+
+  const dismissLabel = () => {
+    interacted.current = true;
+    setTimerLabel(false);
+    setHovered(false);
+  };
 
   const showLabel = (hovered || timerLabel) && !open;
 
@@ -29,7 +38,7 @@ export default function ChatBubble() {
       {/* Bubble button */}
       <button
         className="chat-bubble"
-        onClick={() => setOpen((o) => !o)}
+        onClick={() => { setOpen((o) => !o); dismissLabel(); }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         aria-label="Abrir chat"
