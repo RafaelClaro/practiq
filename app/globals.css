@@ -335,7 +335,7 @@ h2 {
 .dor-item:last-child { border-bottom: none; padding-bottom: 0; }
 .dor-item h4 { font-size: 14.5px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
 .dor-item p  { font-size: 13.5px; color: var(--muted); line-height: 1.65; margin-bottom: 8px; }
-.dor-item .dor-stat { margin-top: 0; font-size: 12px; color: var(--accent); opacity: 1; font-weight: 600; }
+.dor-item .dor-stat { margin-top: 0; font-size: 12px; color: var(--accent); opacity: .85; font-weight: 400; }
 
 /* STEPS */
 .steps-grid {
@@ -395,8 +395,7 @@ h2 {
   background: linear-gradient(150deg, #13161E 0%, #0f1f1a 100%);
 }
 .svc-badge {
-  position: absolute;
-  top: 18px; right: 18px;
+  align-self: flex-start;
   font-family: 'JetBrains Mono', monospace;
   font-size: 9px;
   color: var(--accent);
@@ -405,6 +404,7 @@ h2 {
   background: var(--accent-dim);
   padding: 4px 10px;
   border-radius: 20px;
+  margin-bottom: -4px;
 }
 
 .svc-icon {
