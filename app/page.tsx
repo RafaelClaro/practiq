@@ -139,29 +139,29 @@ export default function Home() {
                 <div className="svc-card featured">
                   <span className="svc-badge">Mais contratado</span>
                   <div className="svc-name">Agente de atendimento no WhatsApp</div>
-                  <div className="svc-desc">Responde dúvidas, agenda compromissos, confirma horários e encaminha casos complexos — 24h por dia, sem recepcionista.</div>
+                  <div className="svc-desc">Responde, agenda e confirma horários 24h por dia, sem recepcionista.</div>
                   <div className="svc-tags">
                     <span className="tag">WhatsApp</span><span className="tag">Google Agenda</span><span className="tag">IA</span>
                   </div>
-                  <div className="svc-price">A partir de R$ 2.500 + mensalidade</div>
+                  <div className="svc-price">Consulte valores</div>
                 </div>
 
                 <div className="svc-card">
                   <div className="svc-name">Confirmação e lembrete automático</div>
-                  <div className="svc-desc">Mensagem automática antes do compromisso com link de confirmação ou reagendamento. Elimina faltas sem esforço da equipe.</div>
+                  <div className="svc-desc">Mensagem automática antes do compromisso, com link de confirmação ou reagendamento.</div>
                   <div className="svc-tags">
                     <span className="tag">WhatsApp</span><span className="tag">Telegram</span><span className="tag">Automático</span>
                   </div>
-                  <div className="svc-price">A partir de R$ 1.500 + mensalidade</div>
+                  <div className="svc-price">Consulte valores</div>
                 </div>
 
                 <div className="svc-card">
                   <div className="svc-name">Régua de relacionamento pós-atendimento</div>
-                  <div className="svc-desc">Follow-up automático após cada atendimento: pesquisa de satisfação, lembrete de retorno e reativação de clientes inativos.</div>
+                  <div className="svc-desc">Follow-up automático: satisfação, lembrete de retorno e reativação de clientes inativos.</div>
                   <div className="svc-tags">
                     <span className="tag">Retenção</span><span className="tag">WhatsApp</span><span className="tag">Personalizado</span>
                   </div>
-                  <div className="svc-price">A partir de R$ 2.000 + mensalidade</div>
+                  <div className="svc-price">Consulte valores</div>
                 </div>
               </div>
             </div>
@@ -172,39 +172,39 @@ export default function Home() {
                 <div className="svc-card">
                   <span className="svc-badge">Mais pedido</span>
                   <div className="svc-name">Site institucional profissional</div>
-                  <div className="svc-desc">Página rápida, mobile-first, com identidade visual própria. Passa credibilidade e converte visitante em cliente.</div>
+                  <div className="svc-desc">Página rápida, mobile-first, com identidade visual própria que converte visitante em cliente.</div>
                   <div className="svc-tags">
                     <span className="tag">Mobile-first</span><span className="tag">SEO básico</span><span className="tag">Design único</span>
                   </div>
-                  <div className="svc-price">A partir de R$ 2.000 valor único</div>
+                  <div className="svc-price">Consulte valores</div>
                 </div>
 
                 <div className="svc-card">
                   <div className="svc-name">Landing page de conversão</div>
-                  <div className="svc-desc">Página única focada em vender um produto, serviço ou captar leads. Estrutura pensada pra transformar visita em contato.</div>
+                  <div className="svc-desc">Página única pra vender um produto, serviço ou captar leads de forma direta.</div>
                   <div className="svc-tags">
                     <span className="tag">Conversão</span><span className="tag">Copywriting</span><span className="tag">Analytics</span>
                   </div>
-                  <div className="svc-price">A partir de R$ 1.800 valor único</div>
+                  <div className="svc-price">Consulte valores</div>
                 </div>
 
                 <div className="svc-card">
                   <div className="svc-name">Portal ou sistema sob medida</div>
-                  <div className="svc-desc">Área de login, painel administrativo, integração com banco de dados. Para quem precisa de mais que uma página estática.</div>
+                  <div className="svc-desc">Login, painel administrativo e integração com banco de dados para quem precisa de mais.</div>
                   <div className="svc-tags">
                     <span className="tag">Sob medida</span><span className="tag">Login</span><span className="tag">Escalável</span>
                   </div>
-                  <div className="svc-price">A partir de R$ 4.500 valor único</div>
+                  <div className="svc-price">Consulte valores</div>
                 </div>
 
                 <div className="svc-card combo">
                   <span className="svc-badge combo-badge">Mais completo</span>
                   <div className="svc-name">Site + Automação integrados</div>
-                  <div className="svc-desc">Seu site com agendamento e atendimento via WhatsApp já conectados desde o lançamento. Tudo entregue e mantido por mim.</div>
+                  <div className="svc-desc">Site com agendamento e atendimento via WhatsApp já conectados, entregue e mantido por mim.</div>
                   <div className="svc-tags">
                     <span className="tag">Tudo incluído</span><span className="tag">Prioridade</span><span className="tag">Suporte dedicado</span>
                   </div>
-                  <div className="svc-price">A partir de R$ 6.500 + mensalidade</div>
+                  <div className="svc-price">Consulte valores</div>
                 </div>
               </div>
             </div>
@@ -216,7 +216,7 @@ export default function Home() {
           <div className="section-wrap" style={{ border: "none", paddingTop: 100, paddingBottom: 100 }}>
             <p className="eyebrow reveal-left">Resultados</p>
             <h2 className="reveal" data-delay="120">O que muda quando<br/>o processo roda sozinho.</h2>
-            <p className="sec-sub reveal" data-delay="220">Exemplos reais de automação e de sites que mudaram o jogo pra negócios pequenos.</p>
+            <p className="sec-sub reveal" data-delay="220">Ganhos reais de tempo e previsibilidade pra negócios que automatizam ou ganham presença digital.</p>
 
             <div className="stats-row" data-stagger>
               {[
@@ -228,45 +228,6 @@ export default function Home() {
                 <div key={s.num} className="stat-box">
                   <div className="stat-num" data-count={s.count} data-prefix={s.prefix} data-suffix={s.suffix}>{s.num}</div>
                   <div className="stat-label">{s.label}</div>
-                </div>
-              ))}
-            </div>
-
-            <div className="cases-grid" data-stagger>
-              {[
-                {
-                  icon: <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>,
-                  tag: "Automação", who: "Profissional de saúde", type: "Consultório próprio · Interior SP",
-                  before: "Perdia 1h por dia respondendo horário disponível e lembrando cliente de retorno manualmente.",
-                  after:  "WhatsApp conectado ao Google Agenda. Cliente agenda sozinho.",
-                },
-                {
-                  icon: <><rect x="3" y="3" width="7" height="18"/><rect x="14" y="9" width="7" height="12"/><path d="M3 21h18"/></>,
-                  tag: "Automação", who: "Escritório de contabilidade", type: "8 colaboradores · São Paulo",
-                  before: "Clientes enviavam documento pelo WhatsApp sem organização. Equipe gastava horas triando.",
-                  after:  "Agente recebe, categoriza e notifica o responsável automaticamente.",
-                },
-                {
-                  icon: <><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></>,
-                  tag: "Site", who: "Profissional de educação", type: "Aulas particulares · Online",
-                  before: "Não tinha onde mostrar metodologia, preços e disponibilidade — dependia 100% de indicação.",
-                  after:  "Site com agendamento próprio. Aluno vê tudo e marca direto, sem trocar mensagem.",
-                },
-              ].map((c) => (
-                <div key={c.who} className="case-card">
-                  <div className="case-header">
-                    <div className="case-avatar">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                        {c.icon}
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="case-who">{c.who}</div>
-                      <div className="case-type">{c.type}</div>
-                    </div>
-                  </div>
-                  <div className="case-before">{c.before}</div>
-                  <div className="case-after">{c.after}</div>
                 </div>
               ))}
             </div>
@@ -328,6 +289,11 @@ export default function Home() {
       {/* FOOTER */}
       <footer>
         <div className="footer-brand">Practiq<span>.</span></div>
+        <ul className="footer-links">
+          <li><a href="#automacao">Automação</a></li>
+          <li><a href="#sites">Sites</a></li>
+          <li><a href="#prova">Resultados</a></li>
+        </ul>
         <div className="footer-copy">Tecnologia prática para negócios reais</div>
       </footer>
 
