@@ -66,14 +66,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* TIMELINE WRAP */}
-      <div id="timeline-wrap">
-        <div id="timeline-rail">
-          <div id="tl-track"></div>
-          <div id="tl-fill"></div>
-        </div>
-
-        {/* DOR */}
+      {/* DOR */}
         <div id="dor" style={{ borderTop: "1px solid var(--border)" }}>
           <div className="section-wrap" style={{ border: "none", paddingTop: 100, paddingBottom: 100 }}>
             <p className="eyebrow reveal-left">O problema, nos dois lados</p>
@@ -310,29 +303,31 @@ export default function Home() {
           </div>
         </div>
 
-        {/* COMO CONTRATAR */}
-        <div id="como" style={{ borderTop: "1px solid var(--border)" }}>
-          <div className="section-wrap" style={{ border: "none", paddingTop: 100, paddingBottom: 100 }}>
-            <p className="eyebrow reveal-left">Como contratar</p>
-            <h2 className="reveal" data-delay="120">Simples, direto,<br/>sem burocracia.</h2>
-            <p className="sec-sub reveal" data-delay="220">O processo é o mesmo pros dois caminhos — automação ou site.</p>
-            <div className="process-row" data-stagger>
-              {[
-                { n: "01", title: "Conversa rápida", desc: "Me conta o que você precisa hoje. 30 minutos pelo WhatsApp ou videochamada. Sem formulário, sem reunião longa.", time: "→ Hoje mesmo" },
-                { n: "02", title: "Proposta sob medida", desc: "Envio proposta clara com escopo, prazo e valor. Sem surpresa no meio do projeto. Você decide com calma.", time: "→ Em até 24h" },
-                { n: "03", title: "Entrega funcionando", desc: "Desenvolvo, testo e coloco no ar. Você aprova antes de ativar. Suporte e manutenção conforme o plano.", time: "→ Em até 7 dias úteis" },
-              ].map((s) => (
-                <div key={s.n} className="proc-step">
-                  <div className="proc-num">{s.n}</div>
-                  <div className="proc-title">{s.title}</div>
-                  <div className="proc-desc">{s.desc}</div>
-                  <div className="proc-time">{s.time}</div>
-                </div>
-              ))}
-            </div>
+      {/* COMO CONTRATAR */}
+      <div id="como" style={{ borderTop: "1px solid var(--border)" }}>
+        <div className="section-wrap" style={{ border: "none", paddingTop: 100, paddingBottom: 100 }}>
+          <p className="eyebrow reveal-left">Como contratar</p>
+          <h2 className="reveal" data-delay="120">Simples, direto,<br/>sem burocracia.</h2>
+          <p className="sec-sub reveal" data-delay="220">O processo é o mesmo pros dois caminhos — automação ou site.</p>
+
+          <div className="timeline" id="comoTimeline">
+            <div className="timeline-rail"><div className="timeline-rail-fill" id="comoTimelineFill"></div></div>
+
+            {[
+              { n: "01", title: "Conversa rápida", desc: "Me conta o que você precisa hoje. 30 minutos pelo WhatsApp ou videochamada. Sem formulário, sem reunião longa.", time: "→ Hoje mesmo" },
+              { n: "02", title: "Proposta sob medida", desc: "Envio proposta clara com escopo, prazo e valor. Sem surpresa no meio do projeto. Você decide com calma.", time: "→ Em até 24h" },
+              { n: "03", title: "Entrega funcionando", desc: "Desenvolvo, testo e coloco no ar. Você aprova antes de ativar. Suporte e manutenção conforme o plano.", time: "→ Em até 7 dias úteis" },
+            ].map((s, i) => (
+              <div key={s.n} className="timeline-step" data-step={i}>
+                <div className="timeline-dot">{s.n}</div>
+                <h4>{s.title}</h4>
+                <p>{s.desc}</p>
+                <span className="timeline-time">{s.time}</span>
+              </div>
+            ))}
           </div>
         </div>
-      </div>{/* /timeline-wrap */}
+      </div>
 
       {/* CTA FINAL */}
       <div id="contato" style={{ borderTop: "1px solid var(--border)", padding: "120px 48px", textAlign: "center" }}>

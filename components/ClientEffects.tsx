@@ -2,18 +2,6 @@
 
 import { useEffect } from "react";
 
-const WA_URL =
-  "https://wa.me/5511976287171?text=Olá%2C%20Rafael%21%20Vi%20o%20site%20da%20Practiq%20e%20quero%20saber%20mais%20sobre%20automação%20para%20minha%20empresa.";
-
-const TL_IDS    = ["dor", "servicos", "prova", "como"];
-const TL_LABELS = ["O problema", "Serviços", "Resultados", "Como contratar"];
-const TL_ICONS  = [
-  '<svg viewBox="0 0 24 24"><path d="M10.24 3.957l-8.422 14.06a1.989 1.989 0 0 0 1.7 2.983h16.845a1.989 1.989 0 0 0 1.7-2.983l-8.423-14.06a1.989 1.989 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>',
-  '<svg viewBox="0 0 24 24"><path d="M3.5 5.5l1.5 1.5l2.5-2.5m-4 6l1.5 1.5l2.5-2.5m-4 6l1.5 1.5l2.5-2.5"/><path d="M11 6h9m-9 6h9m-9 6h9"/></svg>',
-  '<svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10M17 4v8a5 5 0 0 1-10 0V4"/><path d="M5 9H3M19 9h2"/></svg>',
-  '<svg viewBox="0 0 24 24"><path d="M5 12l5 5l10-10"/></svg>',
-];
-
 export default function ClientEffects() {
   useEffect(() => {
     // Nav scroll
@@ -77,96 +65,37 @@ export default function ClientEffects() {
     );
     document.querySelectorAll<HTMLElement>("[data-count]").forEach((el) => counterObs.observe(el));
 
-    // Timeline
-    const wrap  = document.getElementById("timeline-wrap");
-    const rail  = document.getElementById("timeline-rail");
-    const fill  = document.getElementById("tl-fill");
-    const track = document.getElementById("tl-track");
-    if (!wrap || !rail || !fill) return;
+    // Timeline "Como contratar" — barra vertical que se autopreenche conforme scroll
+    const timelineEl   = document.getElementById("comoTimeline");
+    const timelineFill = document.getElementById("comoTimelineFill");
+    const steps = document.querySelectorAll<HTMLElement>("#comoTimeline .timeline-step");
 
-    let tlYFirst = 0;
-    let tlYEnd   = 0;
-
-    const nodes = TL_IDS.map((id, i) => {
-      const d = document.createElement("div");
-      const isEndpoint = i === TL_IDS.length - 1;
-      d.className = isEndpoint ? "tl-node endpoint" : "tl-node";
-      d.innerHTML = isEndpoint
-        ? TL_ICONS[i]
-        : TL_ICONS[i] + `<span class="tl-tip">${TL_LABELS[i]}</span>`;
-      d.addEventListener("click", () => {
-        document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
-      rail.appendChild(d);
-      return d;
-    });
-
-    function placeNodes() {
-      const wrapTop = wrap!.getBoundingClientRect().top + window.scrollY;
-      TL_IDS.forEach((id, i) => {
-        const sec = document.getElementById(id);
-        if (!sec) return;
-        const y = sec.getBoundingClientRect().top + window.scrollY - wrapTop + 80;
-        nodes[i].style.top = y + "px";
-      });
-      if (nodes.length >= 2 && track) {
-        const yFirst = parseFloat(nodes[0].style.top || "0");
-        const lastSec = document.getElementById(TL_IDS[TL_IDS.length - 1]);
-        const wrapTop2 = wrap!.getBoundingClientRect().top + window.scrollY;
-        const yEnd = lastSec
-          ? lastSec.getBoundingClientRect().top + window.scrollY - wrapTop2 + lastSec.offsetHeight
-          : parseFloat(nodes[nodes.length - 1].style.top || "0");
-        tlYFirst = yFirst;
-        tlYEnd   = yEnd;
-        track.style.top    = yFirst + "px";
-        track.style.height = Math.max(0, yEnd - yFirst) + "px";
-      }
-    }
-
-    function update() {
-      placeNodes();
-      const wrapTop = wrap!.getBoundingClientRect().top + window.scrollY;
+    function updateComoTimeline() {
+      if (!timelineEl || !timelineFill) return;
+      const rect = timelineEl.getBoundingClientRect();
       const vh = window.innerHeight;
+      const start = vh * 0.75;
+      const end = -rect.height + vh * 0.35;
+      const total = start - end;
+      const current = start - rect.top;
+      const pct = Math.min(Math.max(current / total, 0), 1) * 100;
+      timelineFill.style.height = pct + "%";
 
-      const nodePageYs = nodes.map((n) => parseFloat(n.style.top || "0") + wrapTop);
-      const scrollMid = window.scrollY + vh * 0.55;
-
-      const fillStartPageY = wrapTop + tlYFirst;
-      const fillEndPageY   = wrapTop + tlYEnd;
-      const pct = fillEndPageY > fillStartPageY
-        ? Math.max(0, Math.min(1, (scrollMid - fillStartPageY) / (fillEndPageY - fillStartPageY)))
-        : 0;
-      fill!.style.top    = tlYFirst + "px";
-      fill!.style.height = Math.max(0, (tlYEnd - tlYFirst) * pct) + "px";
-
-      let activeIdx = -1;
-      nodePageYs.forEach((y, i) => { if (scrollMid >= y - 20) activeIdx = i; });
-
-      nodes.forEach((n, i) => {
-        n.classList.remove("active", "done", "future");
-        if (activeIdx < 0) { n.classList.add("future"); return; }
-        if (i < activeIdx)        n.classList.add("done");
-        else if (i === activeIdx) n.classList.add("active");
-        else                      n.classList.add("future");
+      steps.forEach((step) => {
+        const stepRect = step.getBoundingClientRect();
+        step.classList.toggle("active", stepRect.top < vh * 0.6);
       });
     }
-
-    window.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", () => { placeNodes(); update(); });
-
-    if (document.readyState === "complete") { placeNodes(); update(); }
-    else window.addEventListener("load", () => { placeNodes(); update(); });
-    requestAnimationFrame(() => { placeNodes(); update(); });
-    const t = setTimeout(() => { placeNodes(); update(); }, 400);
+    window.addEventListener("scroll", updateComoTimeline, { passive: true });
+    window.addEventListener("resize", updateComoTimeline);
+    updateComoTimeline();
 
     return () => {
       window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("scroll", update);
+      window.removeEventListener("scroll", updateComoTimeline);
+      window.removeEventListener("resize", updateComoTimeline);
       observer.disconnect();
       counterObs.disconnect();
-      clearTimeout(t);
-      // remove injected nodes on unmount
-      nodes.forEach((n) => n.remove());
     };
   }, []);
 

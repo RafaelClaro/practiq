@@ -461,26 +461,6 @@ h2 {
 .case-before::before { content: 'Antes  '; font-weight: 700; opacity: .6; }
 .case-after::before  { content: 'Depois  '; font-weight: 700; opacity: .6; }
 
-/* PROCESSO */
-.process-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-
-.proc-step { padding: 40px 32px; border-right: 1px solid var(--border); }
-.proc-step:last-child { border-right: none; }
-
-.proc-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 44px;
-  font-weight: 500;
-  color: var(--border);
-  line-height: 1;
-  margin-bottom: 20px;
-  letter-spacing: -2px;
-}
-
-.proc-title { font-size: 17px; font-weight: 600; margin-bottom: 10px; }
-.proc-desc  { font-size: 14px; color: var(--muted); line-height: 1.75; }
-.proc-time  { margin-top: 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent); letter-spacing: 1px; }
-
 /* CTA FINAL */
 #contato { border-top: 1px solid var(--border); padding: 120px 48px; text-align: center; }
 
@@ -564,117 +544,41 @@ footer {
   .reveal, .reveal-left, .reveal-right, .reveal-scale { opacity: 1 !important; transform: none !important; transition: none !important; }
 }
 
-/* TIMELINE */
-#timeline-wrap { position: relative; }
-
-#timeline-rail {
+/* TIMELINE — "Como contratar", barra vertical autopreenchível */
+.timeline { position: relative; max-width: 680px; padding-left: 2.2rem; }
+.timeline-rail {
   position: absolute;
-  left: max(0px, calc((100% - 1120px) / 2));
-  top: 0; bottom: 0;
-  width: 40px;
-  pointer-events: none;
-  z-index: 10;
-}
-
-#tl-track {
-  position: absolute;
-  left: 50%; transform: translateX(-50%);
-  top: 0; height: 0;
+  left: 8px; top: 6px; bottom: 6px;
   width: 2px;
-  background: rgba(255,255,255,.08);
-  border-radius: 2px;
+  background: var(--border);
 }
-
-#tl-fill {
+.timeline-rail-fill {
   position: absolute;
-  left: 50%; transform: translateX(-50%);
-  top: 0; height: 0;
-  width: 3px;
-  background: linear-gradient(180deg, #6EE7C7 0%, #3dd9b3 100%);
-  border-radius: 3px;
-  box-shadow: 0 0 10px rgba(110,231,199,.6), 0 0 24px rgba(110,231,199,.3);
+  left: 0; top: 0;
+  width: 100%; height: 0%;
+  background: linear-gradient(180deg, var(--accent), var(--accent-dim));
+  transition: height .3s ease;
 }
-
-.tl-node {
+.timeline-step { position: relative; padding-bottom: 2.6rem; }
+.timeline-step:last-child { padding-bottom: 0; }
+.timeline-dot {
   position: absolute;
-  left: 50%; transform: translate(-50%, -50%);
-  width: 28px; height: 28px;
+  left: -2.2rem; top: 2px;
+  width: 18px; height: 18px;
   border-radius: 50%;
-  background: #0D0F14;
-  border: 2px solid rgba(255,255,255,.1);
+  background: var(--bg);
+  border: 2px solid var(--border);
   display: flex; align-items: center; justify-content: center;
-  cursor: pointer;
-  pointer-events: all;
-  transition: border-color .3s, background .3s, box-shadow .3s, transform .3s, opacity .3s;
-  z-index: 3;
+  font-size: .62rem; font-weight: 700; color: var(--muted);
+  transition: border-color .3s, color .3s, background .3s;
+  z-index: 2;
 }
-.tl-node svg {
-  width: 11px; height: 11px;
-  stroke: rgba(255,255,255,.22);
-  fill: none; stroke-width: 2;
-  stroke-linecap: round; stroke-linejoin: round;
-  display: block; flex-shrink: 0;
-  transition: stroke .3s;
+.timeline-step.active .timeline-dot {
+  border-color: var(--accent); background: var(--accent); color: #06120e;
 }
-
-.tl-node.future { opacity: 0.28; }
-
-.tl-node.done { border-color: #6EE7C7; background: #6EE7C7; box-shadow: 0 0 8px rgba(110,231,199,.5); }
-.tl-node.done svg { stroke: #0D0F14; }
-
-.tl-node.active {
-  border-color: #6EE7C7;
-  background: #1E4A40;
-  transform: translate(-50%, -50%) scale(1.3);
-  box-shadow: 0 0 0 5px rgba(110,231,199,.15), 0 0 18px rgba(110,231,199,.7), 0 0 40px rgba(110,231,199,.35);
-  animation: tlPulse 2s ease-in-out infinite;
-}
-.tl-node.active svg { stroke: #6EE7C7; }
-
-@keyframes tlPulse {
-  0%,100% { box-shadow: 0 0 0 5px rgba(110,231,199,.15), 0 0 18px rgba(110,231,199,.7),  0 0 40px rgba(110,231,199,.35); }
-  50%      { box-shadow: 0 0 0 9px rgba(110,231,199,.07), 0 0 28px rgba(110,231,199,.9),  0 0 56px rgba(110,231,199,.45); }
-}
-
-/* ENDPOINT NODE — mesmo verde, levemente maior */
-.tl-node.endpoint {
-  width: 34px; height: 34px;
-}
-
-.tl-endpoint-label {
-  position: absolute;
-  left: 40px; top: 50%;
-  transform: translateY(-50%);
-  font-size: 10px;
-  font-family: 'JetBrains Mono', monospace;
-  color: #6EE7C7;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .5s ease;
-  letter-spacing: .03em;
-}
-.tl-node.endpoint.done .tl-endpoint-label,
-.tl-node.endpoint.active .tl-endpoint-label { opacity: 1; }
-
-.tl-tip {
-  position: absolute;
-  left: 40px; top: 50%;
-  transform: translateY(-50%);
-  background: #13161E;
-  border: 1px solid #1C1F2C;
-  color: #EFEFEF;
-  font-size: 10px;
-  font-family: 'JetBrains Mono', monospace;
-  padding: 4px 9px; border-radius: 6px;
-  white-space: nowrap;
-  opacity: 0; pointer-events: none;
-  transition: opacity .15s; z-index: 99;
-}
-.tl-node:hover .tl-tip { opacity: 1; }
-.tl-node.endpoint .tl-tip { display: none; }
-
-#timeline-wrap .section-wrap { padding-left: 56px !important; }
+.timeline-step h4 { font-size: 1.02rem; font-weight: 600; color: var(--text); margin-bottom: .6rem; }
+.timeline-step p  { font-size: .87rem; color: var(--muted); line-height: 1.65; margin-bottom: .7rem; }
+.timeline-time    { font-size: .78rem; color: var(--accent); font-weight: 600; }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
@@ -688,18 +592,7 @@ footer {
   .stat-box:first-child { border-radius: 14px 14px 0 0; }
   .stat-box:last-child  { border-radius: 0 0 14px 14px; }
   .dor-grid, .stats-row { grid-template-columns: 1fr; }
-  .process-row { grid-template-columns: 1fr; }
-  .proc-step { border-right: none; border-bottom: 1px solid var(--border); }
-  .proc-step:last-child { border-bottom: none; }
 
   .pilares-grid { grid-template-columns: 1fr; margin-top: 40px; }
   .dores-grid   { grid-template-columns: 1fr; gap: 14px; }
-
-  /* Timeline rail: fixado à esquerda da tela com margem */
-  #timeline-rail { left: 8px; width: 24px; }
-  .tl-node { width: 18px; height: 18px; }
-  .tl-node svg { width: 7px; height: 7px; }
-  .tl-tip { display: none; }
-  #timeline-wrap .section-wrap { padding-left: 32px !important; }
-  #timeline-wrap { overflow: visible; }
 }
