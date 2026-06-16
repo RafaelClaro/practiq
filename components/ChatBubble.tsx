@@ -1,19 +1,27 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const TYPEBOT_ID = "practiq-demo-bot-pfjbqej";
 
 export default function ChatBubble() {
   const [open, setOpen] = useState(false);
   const [hovered, setHovered] = useState(false);
+  const [timerLabel, setTimerLabel] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  useEffect(() => {
+    const t = setTimeout(() => setTimerLabel(true), 3000);
+    return () => clearTimeout(t);
+  }, []);
+
+  const showLabel = (hovered || timerLabel) && !open;
 
   return (
     <>
       {/* Label tooltip */}
-      {hovered && !open && (
-        <div className="chat-label" onClick={() => setOpen(true)}>
+      {showLabel && (
+        <div className="chat-label" onClick={() => { setOpen(true); setTimerLabel(false); }}>
           Teste o assistente com IA 🤖
         </div>
       )}
