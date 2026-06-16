@@ -571,16 +571,17 @@ footer {
 .timeline-step:last-child { padding-bottom: 0; }
 .timeline-dot {
   position: absolute;
-  left: -2.2rem; top: 2px;
-  width: 18px; height: 18px;
+  left: -2.4rem; top: -3px;
+  width: 26px; height: 26px;
   border-radius: 50%;
   background: var(--bg);
   border: 2px solid var(--border);
   display: flex; align-items: center; justify-content: center;
-  font-size: .62rem; font-weight: 700; color: var(--muted);
+  color: var(--muted);
   transition: border-color .3s, color .3s, background .3s;
   z-index: 2;
 }
+.timeline-dot svg { width: 13px; height: 13px; }
 .timeline-step.active .timeline-dot {
   border-color: var(--accent); background: var(--accent); color: #06120e;
 }
